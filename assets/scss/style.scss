@@ -1,0 +1,244 @@
+@import 'partials/layout';
+@import 'partials/mixins';
+
+* {
+	&, &::before, &::after {
+		@include box-sizing(border-box);
+		outline: none;
+	}
+}
+
+html, body {
+	color: #FFFFFF;
+	background-color: #FCFCFC;
+	background-image: url('../img/sxmeptmnsc4-jacob-repko.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
+	min-height: 100vh; // Document element height workaround.
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	&, &:hover, &:active, &:visited, &:focus {
+		position: relative;
+		color: #FFFFFF;
+		text-decoration: none;
+		@include transition(all .1s ease);
+		
+	}
+	&, &:visited {
+		&:not(.no-decoration)::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			background-color: #FFFFFF;
+			bottom: -2px;
+			display: block;
+			height: 1px;
+			width: 0;
+			@include transition(all .2s ease);
+		}
+	}
+	&:hover::before, &:active::before, &:focus::before {
+		width: 100%;
+	}
+}
+
+.features-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 30px auto 160px auto;
+	width: 95%;
+	@include breakpoint(md) { width: 90% }
+	@include breakpoint(lg) { width: 85%; flex-wrap: nowrap; }
+	@include breakpoint(xl) { width: 80% }
+	.feature-box {
+		position: relative;
+		display: inline-flex;
+		flex-basis: 100%;
+		flex-direction: column;
+		align-items: center;
+		padding: 0 25px 30px;
+		text-align: center;
+		.icon-wrapper > .fa { font-size: 3.5rem }
+		.title { margin: 30px 0 0 }
+		.description { font-size: 14px; font-weight: 300; }
+		&:first-of-type::before { display: none }
+		&::before {
+			content: "";
+			position: absolute;
+			background-color: #FFFFFF;
+			top: -15px;
+			left: 50%;
+			display: block;
+			height: 1px;
+			width: 40%;
+			@include transform(translateX(-50%));
+			@include breakpoint(lg) {
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 1px;
+				@include transform(translate(0%, 0%));
+			}
+		}
+	}
+}
+
+
+footer {
+	background-color: #27245D;
+	margin-top: 10px;
+	.email-response {
+		background-color: #5D5B8C;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		width: 95%;
+		padding: 30px 25px;
+		margin: 0 auto 0 auto;
+		border: 4px solid #413D78;
+		@include breakpoint(md) { width: 90%; padding: 30px 50px }
+		@include breakpoint(lg) {
+			width: 85%;
+			flex-wrap: nowrap;
+			padding: 40px 50px;
+			& > * { align-items: center }
+		}
+		@include breakpoint(xl) { width: 80% }
+		@include transform(translateY(-50%));
+		.description-wrapper {
+			flex-basis: 100%;
+			margin-bottom: 15px;
+			@include breakpoint(lg) { flex-basis: 20%; margin-bottom: 0 }
+		}
+		.form-wrapper {
+			flex-basis: 100%;
+			@include breakpoint(lg) { flex-basis: 75% }
+			form {
+				height: 100%;
+				.fields-wrapper {
+					position: relative;
+					height: 100%;
+					@include breakpoint(lg) { margin: 0 !important }
+					input[type=email] {
+						font-family: 'Lato', sans-serif;
+						font-size: 18px;
+						display: block;
+						min-height: 45px;
+						width: 100%;
+						padding-left: 15px;
+						padding-right: 15px;
+						border: 0;
+						@include breakpoint(md) { padding-right: 135px }
+					}
+					button[type=submit] {
+						color: #FFFFFF;
+						cursor: pointer;
+						background-color: #27245D;
+						font-family: 'Lato', sans-serif;
+						font-size: 14px;
+						font-weight: 300;
+						text-transform: uppercase;
+						display: block;
+						height: 45px;
+						width: 100%;
+						border: 0;
+						@include breakpoint(md) {
+							right: 0;
+							bottom: 0;
+							position: absolute;
+							width: 120px;
+						}
+						@include breakpoint(lg) { top: 0 }
+					}
+				}
+			}
+		}
+	}
+	.logo-wrapper {
+		margin: 0 auto 10px;
+		width: 95%;
+		@include breakpoint(md) { width: 90% }
+		@include breakpoint(lg) { width: 85%; flex-wrap: nowrap; }
+		@include breakpoint(xl) { width: 80% }
+		a {
+			font-size: 3.5rem;
+			font-weight: 300;
+			text-transform: uppercase;
+		}
+	}
+	.widgets-wrapper {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		margin: 0 auto;
+		width: 95%;
+		@include breakpoint(md) { width: 90% }
+		@include breakpoint(lg) { width: 85%; flex-wrap: nowrap;flex-direction: row; }
+		@include breakpoint(xl) { width: 80% }
+		.widget {
+			flex-basis: 100%;
+			.title { text-transform: capitalize; margin-bottom: 10px }
+			&.text {
+				padding: 0 20px 0 0;
+				.description {
+					line-height: 1.5em;
+					margin-bottom: 20px;
+				}
+			}
+			&.links {
+				.content {
+					display: flex;
+					justify-content: space-between;
+					.links-list {
+						flex-basis: 100%;
+						@include breakpoint(md) {
+							flex-basis: 50%;
+						}
+						&, li {
+							list-style: none;
+							margin: 0;
+							padding: 0;
+						}
+						.item {
+							display: block;
+							margin-bottom: 7px;
+						}
+					}
+				}
+			}
+			&.social {
+				.links-wrapper {
+					.fa {
+						font-size: 1.2rem;
+						display: inline-block;
+						margin: 0 3px 0;
+						&:last-of-type { margin-right: 0 }
+					}
+				}
+				select {
+					background: transparent;
+					border: 1px solid white;
+					padding: 6px 2px;
+					width: 85px;
+					color: white;
+					border-radius: 3px;
+					option { color: #000000 }
+				}
+			}
+		}
+	}
+	.copyrights {
+		background-color: #232057;
+		font-weight: 300;
+		text-align: center;
+		padding: 10px 25px;
+		margin-top: 80px;
+	}
+}

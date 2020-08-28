@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="description"
+		content="A beautifully hand crafeted responsive footer template made with CSS3 flexbox and anchor hover animations.">
+	<meta name="keywords"
+		content="template, footer, hand-crafter, responsive, flexbox, animation, html, css, js, scss, font-awesome, image">
+	<!-- Allow the site crawlers to index and follow the URLs on this page. -->
+	<meta name="robots" content="Index, Follow">
+	<meta name="author" content="Azzaz Khan <appfunky@gmail.com> (https://github.com/azzazkhan)">
+	<title>Flexbox based footer design &mdash; @Azzazkhan</title>
+	<!-- This slightly increases the page loading speed. -->
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<!-- Load the "Lato" font family from Google Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,bold" type="text/css" media="all" />
+	<link rel="stylesheet" href="./assets/css/font-awesome.min.css?ver=4.7.0" type="text/css" media="all" />
+	<link rel="stylesheet" href="./assets/css/style.min.css" type="text/css" media="all" />
+</head>
+
+<body>
+	<!--
+		* READ THESE POINTS BEFORE EDITING ANY OF THE FILES.
+		* 
+		* "Lato" font of Sans Serif family is used as primary and secondary text.
+		* [Light] font weight is used for secondary text.
+		* By default every link will have the (left-to-right) underline animation.
+		* To disable this on specfic links add the (.no-decoration) class to that
+			specifc link.
+		* Layout is based on flexboxes and media queries are used to manipulate the
+			[flex-basis] property of elements upon specified breakpoint.
+		* To change the breakpoint values replace the corresponding values of variables
+			at the beginning of (layout.scss) file located in (assets/scss/partials)
+			directory and then re-compile the (style.scss) file located in (assets/scss)
+			directory.
+		* jQuery is used only to prevent page reload. The script tags can be safely
+			removed.
+			
+		* Have a nice day :)
+		* #HappyCoding!
+	-->
+	<div class="features-wrapper">
+		<div class="feature-box money">
+			<div class="icon-wrapper">
+				<i class="fa fa-money" aria-hidden="true"></i>
+			</div>
+			<h3 class="title">Best Price Guarantee</h3>
+			<p class="description">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, reiciendis.
+			</p>
+		</div>
+		<div class="feature-box flight">
+			<div class="icon-wrapper">
+				<i class="fa fa-plane" aria-hidden="true"></i>
+			</div>
+			<h3 class="title">Travel Insurance</h3>
+			<p class="description">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, reiciendis.
+			</p>
+		</div>
+		<div class="feature-box question">
+			<div class="icon-wrapper">
+				<i class="fa fa-question" aria-hidden="true"></i>
+			</div>
+			<h3 class="title">Need Help?</h3>
+			<p class="description">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, reiciendis.
+			</p>
+		</div>
+	</div>
+	<footer>
+		<div class="email-response">
+			<div class="description-wrapper">
+				<label class="text" for="user_email_response">Signup for new updates & newsletter</label>
+			</div>
+			<div class="form-wrapper">
+				<form action="#" method="POST" id="newsletter_form">
+					<div class="fields-wrapper">
+						<input type="email" name="user_email" id="user_email_response" required
+							placeholder="Enter your email address">
+						<button type="submit" class="btn-submit">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="logo-wrapper">
+			<a href="javascript:void(0)" class="no-decoration">Logo</a>
+		</div>
+		<div class="widgets-wrapper">
+			<div class="widget text">
+				<div class="content">
+					<p class="description">
+						You have question regarding our services?<br />
+						Contact us we will be happy to help you out!
+					</p>
+					<p class="description">
+						<a href="mailto:triprite@gmail.com" target="_blank" class="email"
+							title="Open the email app.">triprite@gmail.com</a><br />
+						<span>123 Lipsum St.South Concetur, CT 1234</span><br />
+						<a href="tel:00910000000000" class="phone" title="Open the phone app.">+91 000-000-0000</a>
+					</p>
+				</div>
+			</div>
+			<div class="widget links">
+				<h4 class="title">Useful links</h4>
+				<div class="content">
+					<ul class="links-list">
+						<li class="item"><a href="javascript:void(0)">Home</a></li>
+						<li class="item"><a href="javascript:void(0)">Tours</a></li>
+						<li class="item"><a href="javascript:void(0)">Umrah</a></li>
+						<li class="item"><a href="javascript:void(0)">About Us</a></li>
+					</ul>
+					<ul class="links-list">
+						<li class="item"><a href="javascript:void(0)">Contact Us</a></li>
+						<li class="item"><a href="javascript:void(0)">FAQs</a></li>
+						<li class="item"><a href="javascript:void(0)">Terms & Conditions</a></li>
+						<li class="item"><a href="javascript:void(0)">Privacy Policy</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="widget social">
+				<h4 class="title">Connect with us</h4>
+				<div class="links-wrapper">
+					<i class="fa fa-facebook" aria-hidden="true"></i>
+					<i class="fa fa-instagram" aria-hidden="true"></i>
+					<i class="fa fa-youtube-play" aria-hidden="true"></i>
+					<i class="fa fa-twitter" aria-hidden="true"></i>
+					<i class="fa fa-github" aria-hidden="true"></i>
+					<i class="fa fa-google-plus" aria-hidden="true"></i>
+				</div>
+				<h4 class="title">
+					<label for="user_language_response">Languages</label>
+				</h4>
+				<select name="user_language" id="user_language_response">
+					<option value="english">ENG</option>
+					<option value="urdu">URD</option>
+					<option value="pushto">PUS</option>
+					<option value="philippines">PIL</option>
+					<option value="persian">PER</option>
+				</select>
+			</div>
+		</div>
+		<div class="copyrights">
+			2019 <a href="#">GS Travellers</a>. All rights reserved.
+		</div>
+	</footer>
+	<script src="./assets/js/jquery.min.js?ver=3.1.1" type="text/javascript"></script>
+	<script type="text/javascript">
+		(function ($) {
+			$('#newsletter_form').on('submit', function (e) {
+				e.preventDefault();
+				alert('Email registered!');
+				$('#user_email_response').val('');
+			});
+		})(jQuery);
+	</script>
+</body>
+
+</html>

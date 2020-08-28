@@ -1,0 +1,75 @@
+// Breakpoints
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+// Media Queries
+
+// With sigle breakpoint i.e (only `min-width`)
+@mixin breakpoint($canvas:xs) {
+	@if $canvas == xs {
+		@media (max-width: $sm) { @content; }
+	}
+	@else if $canvas == sm {
+		@media (min-width: $sm) { @content; }
+	}
+	@else if $canvas == md {
+		@media (min-width: $md) { @content; }
+	}
+	@else if $canvas == lg {
+		@media only screen and (min-width: $lg) { @content; }
+	}
+	@else if $canvas == xl {
+		@media only screen and (min-width: $xl) { @content; }
+	}
+	@else {
+		@media (min-width: $canvas) { @content; }
+	}
+}
+
+
+// With double breakpoints i.e (`min-width` and `max-width`)
+@mixin breakpoints($canvas:xs, $second: xl) {
+	@if $canvas == xs {
+		@media (max-width: $sm) { @content; }
+	}
+	@else if $canvas == sm {
+		@media (min-width: $sm) and (max-width: $md) { @content; }
+	}
+	@else if $canvas == md {
+		@media (min-width: $md) and (max-width: $lg) { @content; }
+	}
+	@else if $canvas == lg {
+		@media only screen and (min-width: $lg) and (max-width: $xl) { @content; }
+	}
+	@else if $canvas == xl {
+		@media only screen and (min-width: $xl) { @content; }
+	}
+	@else {
+		@media (min-width: #{$canvas}) and (max-width: $second) { @content; }
+	}
+}
+
+
+// center vertically and/or horizontally an absolute positioned element
+
+@mixin center($xy:xy) {
+  @if $xy == xy {
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  @else if $xy == x {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+  @else if $xy == y {
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+}
